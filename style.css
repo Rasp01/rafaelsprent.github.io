@@ -38,6 +38,10 @@ h1 {
   height: 100%; /* Full height of the wrapper */
 }
 
+.background-img {
+  display: none; /* Hide the inner div since the background is applied to .left */
+}
+
 .left .attribution {
   position: absolute;
   bottom: 10px; /* Position the text at the bottom of the .left wrapper */
@@ -56,12 +60,22 @@ h1 {
 }
 
 .right {
-  width: 75.00%; /* Set the right wrapper to take up 2/3 of the width */
+  width: 40.00%; /* Set the right wrapper to take up 2/3 of the width */
   height: 100%; /* Full height of the wrapper */
   position: relative;
 }
 
-.name-hero {
+.profile-pic {
+  background: url('ProfilePic.jpg') no-repeat;
+  background-size: cover;
+  border-radius: 50%; /* Makes the image circular */
+  width: 200px; /* Set the width of the circle */
+  height: 200px; /* Set the height of the circle */
+  border: 5px solid white; /* Optional: Add a border around the circle */
+
+}
+
+/* .name-hero {
   background: rgba(0, 0, 0, .001);
   bottom: 0;
   height: 290px;
@@ -71,11 +85,9 @@ h1 {
   right: 0;
   top: 0;
   width: 85%;
-}
+} */
 
-.background-img {
-  display: none; /* Hide the inner div since the background is applied to .left */
-}
+
 
 /* .name-hero h1 {
   font-family: Open Sans, sans-serif;
