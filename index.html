@@ -1,70 +1,52 @@
-<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Open+Sans:300,400,500,700|Waiting+for+the+Sunrise|Shadows+Into+Light' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="styles.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Open+Sans:300,400,500,700|Waiting+for+the+Sunrise|Shadows+Into+Light' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div id="navbar"></div> <!-- Placeholder for the navbar -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">My Portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="experience.html">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="education.html">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="projects.html">Projects/Publications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="interests.html">Interests</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <script>
+    // filepath: c:\Users\raffy\Documents\rafaelsprent.github.io\scripts.js
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        });
+    });
+  </script>
 
-<div class="wrapper clearfix">
-  <div class="left">
-
-    <div class="name-hero">
-
-      <div class="me-img"></div>
-
-    </div>
-
-  </div>
-  <div class="right">
-
-    <div class="inner">
-        
-    <div class="name-text">
-
-        <h1>Anthony <em>Adamski</em></h1>
-        <p>10 Iroquois St Boston, MA 02120</p>
-        <p>adamskianthony@gmail.com</p>
-        <p>(956) 500-5558</p>
-
+  <div class="wrapper clearfix">
+    <div class="left">
+      <div class="name-hero">
+        <div class="me-img"></div>
       </div>
-    
-    <section>
-    <h1>Personal Interests</h1>
-    <ul class="skill-set">
-        <li>Faith</li>
-        <li>Biblical Studies</li>
-        <li>Playing Guitar</li>
-        <li>Song Writing</li>
-        <li>Health & Nutrition</li>
-        <li>Reading</li>
-    </ul>
-    </section>
-    
     </div>
-
+    <div class="right">
+      <div class="inner">
+        <div class="name-text">
+          <h1>Anthony <em>Adamski</em></h1>
+          <p>10 Iroquois St Boston, MA 02120</p>
+          <p>adamskianthony@gmail.com</p>
+          <p>(956) 500-5558</p>
+        </div>
+        <section>
+          <h1>Personal Interests</h1>
+          <ul class="skill-set">
+            <li>Faith</li>
+            <li>Biblical Studies</li>
+            <li>Playing Guitar</li>
+            <li>Song Writing</li>
+            <li>Health & Nutrition</li>
+            <li>Reading</li>
+          </ul>
+        </section>
+      </div>
+    </div>
   </div>
-
-</div>
+</body>
+</html>
