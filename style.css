@@ -28,14 +28,14 @@ h1 {
 
 .wrapper {
   display: flex; /* Use flexbox to align the left and right sections */
-  height: 100vh; /* Full viewport height */
+  min-height: 100vh; /* allow wrapper to grow beyond viewport when content is long */
 }
 
 .left {
   background: url('14333.jpg') no-repeat center center;
   background-size: cover;
-  width: 33%; /* Set the left wrapper to take up 1/3 of the width */
-  height: 100%; /* Full height of the wrapper */
+  width: 33%;
+  position: relative;
 }
 
 .background-img {
@@ -45,7 +45,7 @@ h1 {
 .left .attribution {
   position: absolute;
   bottom: 10px; /* Position the text at the bottom of the .left wrapper */
-  left:10%;
+  left:50%;
   transform: translateX(-50%);
   font-size: 9px;
   color: white;
@@ -61,15 +61,15 @@ h1 {
 
 .right {
   width: 66.00%; /* Set the right wrapper to take up 2/3 of the width */
-  height: 100%; /* Full height of the wrapper */
+  /* remove fixed height so right can grow naturally */
   position: relative;
 }
 
 /* Profile picture: circular, centered, responsive */
 .profile-pic {
   position: absolute;
-  top: 25%;
-  left: 15%;
+  top: 10%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 240px;
   height: 240px;
