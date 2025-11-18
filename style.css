@@ -60,7 +60,7 @@ h1 {
 }
 
 .right {
-  width: 40.00%; /* Set the right wrapper to take up 2/3 of the width */
+  width: 66.00%; /* Set the right wrapper to take up 2/3 of the width */
   height: 100%; /* Full height of the wrapper */
   position: relative;
 }
