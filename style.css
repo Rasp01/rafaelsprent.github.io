@@ -16,6 +16,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   text-rendering: optimizeLegibility;
+  
 }
 
 .skill-set li:hover {
@@ -125,6 +126,7 @@ h1 {
   margin: 0 auto;
   width: 85%;
 } */
+ 
 
 .inner {
   margin: 0 auto;
