@@ -68,21 +68,28 @@ h1 {
 
 /* Profile picture: circular, centered, responsive */
 .profile-pic {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* replaced absolute positioning with fixed so the pic stays in the same place while scrolling */
+  position: fixed;
+  top: 80px;               /* adjust so it's below the fixed navbar */
+  left: 16.5%;             /* centers the pic inside the left column (left column = 33%) */
+  transform: translateX(-50%);
   width: 240px;
   height: 240px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   border: 3px solid #fff;
+  z-index: 1100;           /* above content */
+  transition: top 200ms ease;
 }
 
-/* smaller screens: scale down */
-@media (max-width: 480px) {
+/* smaller screens: scale down and use relative positioning */
+@media (max-width: 48em) {
   .profile-pic {
+    position: absolute;    /* keep it inside the .left column on small screens */
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 110px;
     height: 110px;
   }
