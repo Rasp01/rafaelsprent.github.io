@@ -247,7 +247,7 @@ ul {
 .info-card {
   position: sticky;
   top: calc(70px + 250px); /* 70px = navbar height from index.html; adjust if needed */
-  left: 9%;          /* centers the card under the profile pic */
+  left: 6%;          /* centers the card under the profile pic */
   background: #ffffff;
   padding: 12px 14px;
   border-radius: 6px;
