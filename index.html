@@ -9,11 +9,13 @@
   <!-- smooth scrolling -->
   <style>
     html { scroll-behavior: smooth; }
+    /* reserve space so content isn't hidden under the fixed navbar */
+    body { padding-top: 70px; } /* adjust if your navbar height differs */
   </style>
 </head>
 <body>
-  <div id="navbar"></div> <!-- Placeholder for the navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- removed extra wrapper and make navbar fixed to top -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#about">My Portfolio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +23,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <!-- <li class="nav-item">`
-            <a class="nav-link" href="#about">My Portfolio</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#employment">Employment</a>
           </li>
@@ -42,17 +41,17 @@
     <div class="left">
       <img src="profilePic.jpg" alt="Profile picture" class="profile-pic">
       <a href="http://www.freepik.com" class="attribution">Designed by starline / Freepik</a>
+      <!-- moved info into a white "info-card" below the profile picture -->
+      <div class="name-text info-card">
+        <h1>Rafael <em>Sprent</em></h1>
+        <p>https://github.com/Rasp01</p>
+        <p>https://www.linkedin.com/in/atkinsrealis-rafael-sprent</p>
+        <p>raffy.sprent@gmail.com</p>
+        <p>(+44) 07427632575</p>
+      </div>
     </div>
     <div class="right">
       <div class="inner">
-
-        <div class="name-text">
-          <h1>Rafael <em>Sprent</em></h1>
-          <p>https://github.com/Rasp01</p>
-          <p>https://www.linkedin.com/in/atkinsrealis-rafael-sprent</p>
-          <p>raffy.sprent@gmail.com</p>
-          <p>(+44) 07427632575</p>
-        </div>
 
         <section id="about">
             <h1>About Me </h1>
@@ -145,12 +144,14 @@
     });
   });
 
-  // update active link on scroll
+  // update active link on scroll (use dynamic navbar height)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
   function onScroll() {
-    const scrollPos = window.scrollY + 80; // offset for navbar height
+    const nav = document.querySelector('.navbar');
+    const navHeight = nav ? nav.offsetHeight : 80;
+    const scrollPos = window.scrollY + navHeight + 10;
     sections.forEach(section => {
       const top = section.offsetTop;
       const bottom = top + section.offsetHeight;
